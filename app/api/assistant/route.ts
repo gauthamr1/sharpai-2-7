@@ -1,7 +1,8 @@
 import { AssistantResponse } from 'ai';
 import OpenAI from 'openai';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
+export const maxDuration = 30; // Gives the bot 30 seconds to think
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || '',

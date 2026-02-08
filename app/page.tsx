@@ -16,11 +16,11 @@ export default function Home() {
           <p>Enter your FTC Region</p>
           <input 
             className="region-input"
-            placeholder="e.g. California" 
+            placeholder="e.g. Northern California" 
             onKeyDown={(e) => e.key === 'Enter' && setRegion(e.currentTarget.value)}
           />
           <button 
-            onClick={() => setRegion('California')}
+            onClick={() => setRegion('Northern California')}
             className="start-btn"
           >
             Start Chat
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className="container">
       <div className="header">
-        <div className="title">SharpAI</div>
+        <div className="title">Sharp-AI</div>
         <small>Region: {region}</small>
       </div>
 
