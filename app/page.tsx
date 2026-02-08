@@ -12,7 +12,7 @@ export default function Home() {
     return (
       <div className="container">
         <div className="region-card">
-          <h1 className="title">Welcome</h1>
+          <h1 className="title">Welcome!</h1>
           <p>Enter your FTC Region</p>
           <input 
             className="region-input"

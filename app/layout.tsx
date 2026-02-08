@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FTC Copilot",
-  description: "AI Assistant for FTC Robotics",
+  title: "SharpAI",
+  description: "TeleOp Assistant for FTC Teams across the globe",
 };
 
 export default function RootLayout({

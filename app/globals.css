@@ -1,130 +1,182 @@
 /* app/globals.css */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  color: #333;
+:root {
+  --bg-color: #050505;       /* Almost Black */
+  --chat-bg: #0a0a0a;        /* Slightly lighter black */
+  --primary: #00e676;        /* Bright Matrix Green */
+  --primary-dim: #00a854;    /* Darker Green for hover */
+  --text-main: #ffffff;      /* Pure White */
+  --text-dim: #b0b0b0;       /* Light Gray */
+  --user-msg-bg: #1b5e20;    /* Dark Green background for user */
+  --bot-msg-bg: #1f1f1f;     /* Dark Gray background for bot */
+  --border-color: #333333;   /* Subtle borders */
 }
 
+body {
+  font-family: 'Courier New', Courier, monospace; /* Robot/Code font */
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Layout --- */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: var(--chat-bg);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
 }
 
 .header {
+  padding: 20px;
   text-align: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 20px;
+  border-bottom: 1px solid var(--primary);
+  background-color: var(--bg-color);
 }
 
 .title {
   font-size: 24px;
   font-weight: bold;
-  color: #e65100; /* FTC Orange */
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
+/* --- Chat Area --- */
 .chat-box {
   flex: 1;
   overflow-y: auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding-bottom: 20px;
 }
 
 .message {
-  padding: 15px;
-  border-radius: 12px;
   max-width: 80%;
+  padding: 15px 20px;
+  border-radius: 8px;
   line-height: 1.5;
+  font-size: 16px;
+  position: relative;
 }
 
 .user-msg {
-  background-color: #e3f2fd;
   align-self: flex-end;
-  border-bottom-right-radius: 2px;
+  background-color: var(--user-msg-bg);
+  color: #fff;
+  border: 1px solid var(--primary);
+  border-bottom-right-radius: 0;
 }
 
 .bot-msg {
-  background-color: #fff;
-  border: 1px solid #ddd;
   align-self: flex-start;
-  border-bottom-left-radius: 2px;
+  background-color: var(--bot-msg-bg);
+  color: #e0e0e0;
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 0;
 }
 
+/* --- Input Area --- */
 .input-area {
   padding: 20px;
-  background: white;
-  border-top: 1px solid #eee;
-  position: sticky;
-  bottom: 0;
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--border-color);
 }
 
 .input-form {
   display: flex;
   gap: 10px;
+  position: relative;
 }
 
 .input-field {
   flex: 1;
   padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
+  background-color: #111;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--primary);
+  font-family: inherit;
   font-size: 16px;
   outline: none;
 }
 
 .input-field:focus {
-  border-color: #e65100;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.2);
 }
 
 .send-btn {
-  padding: 0 25px;
-  background-color: #e65100;
-  color: white;
+  padding: 0 30px;
+  background-color: var(--primary);
+  color: #000; /* Black text on green button for high contrast */
   border: none;
-  border-radius: 25px;
+  border-radius: 4px;
   font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
 }
 
 .send-btn:hover {
-  background-color: #bf360c;
+  background-color: var(--primary-dim);
 }
 
-/* Region Form Styles */
+/* --- Region Form (Entry Screen) --- */
+.region-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+
 .region-card {
-  background: white;
+  background-color: var(--chat-bg);
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
   text-align: center;
+  width: 100%;
   max-width: 400px;
-  margin: 100px auto;
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.1);
 }
 
 .region-input {
   width: 100%;
   padding: 15px;
   margin: 20px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-sizing: border-box; /* Fixes width issues */
+  background-color: #111;
+  border: 1px solid var(--border-color);
+  color: var(--primary);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 16px;
+  box-sizing: border-box; /* Crucial for keeping input inside the box */
 }
 
 .start-btn {
   width: 100%;
   padding: 15px;
-  background-color: #333;
-  color: white;
+  background-color: var(--primary);
+  color: #000;
   border: none;
-  border-radius: 8px;
   font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
+  text-transform: uppercase;
+}
+
+.start-btn:hover {
+  background-color: var(--primary-dim);
 }
