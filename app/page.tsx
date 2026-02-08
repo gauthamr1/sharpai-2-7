@@ -20,7 +20,7 @@ export default function Home() {
             onKeyDown={(e) => e.key === 'Enter' && setRegion(e.currentTarget.value)}
           />
           <button 
-            onClick={() => setRegion('Guest')}
+            onClick={() => setRegion('California')}
             className="start-btn"
           >
             Start Chat
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className="container">
       <div className="header">
-        <div className="title">FTC Copilot</div>
+        <div className="title">SharpAI</div>
         <small>Region: {region}</small>
       </div>
 
